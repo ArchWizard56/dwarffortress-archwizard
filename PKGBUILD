@@ -56,7 +56,7 @@ package() {
   ln -s /usr/lib/libpng.so "$pkgdir"/opt/$pkgname/libs/libpng.so.3
 
   # Set pkgname in runscript
-  sed -i "s/^pkgname=.*/pkgname=$pkgname/" "$pkgdir"/usr/bin/$pkgname
+  sed -i "s/^pkgname=.*/pkgname=$pkgname/" "$pkgdir"/usr/bin/dwarffortress
 
   # Desktop launcher with icon
   install -Dm644 "$srcdir"/dwarffortress.desktop "$pkgdir"/usr/share/applications/"$pkgname".desktop
