@@ -17,6 +17,7 @@ optdepends=('nvidia-utils: If you have nvidia graphics'
             'libpulse: for pulse sound')
 options=('!strip' '!buildflags')
 conflicts=('dwarffortress')
+provides=("dwarffortress=$pkgver-$pkgrel")
 install=$pkgname.install
 # I made a fucking github repo with the sole purpose of unfucking df a bit
 # We try to compile whatever little bit of df is open source
@@ -27,11 +28,12 @@ source=(git://github.com/svenstaro/dwarf_fortress_unfuck.git#tag=${pkgver}
         http://www.bay12games.com/dwarves/df_${_pkgver}_linux.tar.bz2
         https://github.com/DFgraphics/CLA/archive/0.47.xx-v26.3.tar.gz)
 sha256sums=('SKIP'
-            '211eaec6559d4fd5c08341dbed1f27bfab997a57bdf61fd268f9940e244652c5'
-            'e79e3d945c6cc0da58f4ca30a210c7bf1bc3149fd10406d1262a6214eb40445a'
-            '83183abc70b11944720b0d86f4efd07468f786b03fa52fe429ca8e371f708e0f'
-            '1de5872bf3ac32906a0082129ec88d6879b6ac7059a3513607d628090b1328e6'
-            '477d24e534f627ec020190d2da784a6b4a4ff28a3e162e7090acee017d841fe3')
+        '211eaec6559d4fd5c08341dbed1f27bfab997a57bdf61fd268f9940e244652c5'
+        'e79e3d945c6cc0da58f4ca30a210c7bf1bc3149fd10406d1262a6214eb40445a'
+        '83183abc70b11944720b0d86f4efd07468f786b03fa52fe429ca8e371f708e0f'
+        '1de5872bf3ac32906a0082129ec88d6879b6ac7059a3513607d628090b1328e6'
+        '477d24e534f627ec020190d2da784a6b4a4ff28a3e162e7090acee017d841fe3')
+
 build() {
   cd dwarf_fortress_unfuck
 
